@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://diqogbgm06008"]
+
+[ext_resource type="Texture2D" uid="uid://cw7ibfwi8mny7" path="res://assets/image/menu-bg.png" id="1_m2r5f"]
+[ext_resource type="Texture2D" uid="uid://b8s1e411cib1e" path="res://assets/image/menu-button.png" id="2_4jn7i"]
+[ext_resource type="Script" path="res://scenes/togglemenu.gd" id="3_ghy8d"]
+[ext_resource type="PackedScene" uid="uid://8gbiwtwr0kib" path="res://scenes/menu.tscn" id="4_qtiae"]
+
+[node name="Cats" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -2.0
+offset_right = 543.0
+offset_bottom = 966.0
+texture = ExtResource("1_m2r5f")
+
+[node name="Button" type="Button" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 104.0
+offset_bottom = 110.0
+icon = ExtResource("2_4jn7i")
+flat = true
+script = ExtResource("3_ghy8d")
+
+[node name="Menu" parent="." instance=ExtResource("4_qtiae")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

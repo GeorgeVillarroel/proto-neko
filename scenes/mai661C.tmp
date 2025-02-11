@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://d1fcxx4wjlaqp"]
+
+[ext_resource type="Texture2D" uid="uid://bpqqtyuapswhd" path="res://assets/image/background.jpg" id="1_8xed5"]
+[ext_resource type="Texture2D" uid="uid://cvw7bx6doxd1j" path="res://icon.svg" id="1_e7gjr"]
+[ext_resource type="Script" path="res://scenes/dragging.gd" id="2_wv0n2"]
+[ext_resource type="Texture2D" uid="uid://b8s1e411cib1e" path="res://assets/image/menu-button.png" id="4_l8grv"]
+[ext_resource type="Script" path="res://scenes/togglemenu.gd" id="5_1ibsh"]
+[ext_resource type="Texture2D" uid="uid://d35tfnsrvarnx" path="res://assets/image/black-bg.png" id="5_jufye"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(-59, 478)
+scale = Vector2(0.846479, 0.84507)
+texture = ExtResource("1_8xed5")
+script = ExtResource("2_wv0n2")
+
+[node name="PlayerImage" type="Sprite2D" parent="."]
+visibility_layer = 1023
+position = Vector2(90, -136)
+texture = ExtResource("1_e7gjr")
+
+[node name="MenuScreen" type="Sprite2D" parent="."]
+
+[node name="Button" type="Button" parent="MenuScreen"]
+z_index = 1
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 104.0
+offset_bottom = 110.0
+icon = ExtResource("4_l8grv")
+script = ExtResource("5_1ibsh")
+
+[node name="BackgroundFilter" type="Sprite2D" parent="MenuScreen"]
+visible = false
+modulate = Color(1, 1, 1, 0.258824)
+position = Vector2(268.5, 481)
+scale = Vector2(0.393431, 1.18735)
+texture = ExtResource("5_jufye")
+
+[connection signal="pressed" from="MenuScreen/Button" to="MenuScreen/Button" method="_on_pressed"]

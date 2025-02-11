@@ -1,0 +1,180 @@
+[gd_scene load_steps=8 format=3 uid="uid://pg1x0vcgsye4"]
+
+[ext_resource type="Texture2D" uid="uid://cw7ibfwi8mny7" path="res://assets/image/menu-bg.png" id="1_osmr7"]
+[ext_resource type="Texture2D" uid="uid://b8s1e411cib1e" path="res://assets/image/menu-button.png" id="2_y0if2"]
+[ext_resource type="Script" path="res://scenes/togglemenu.gd" id="3_xvayf"]
+[ext_resource type="PackedScene" uid="uid://8gbiwtwr0kib" path="res://scenes/menu.tscn" id="4_uc016"]
+[ext_resource type="Texture2D" uid="uid://bkxsaecl0dich" path="res://assets/image/shop-item.png" id="5_opstq"]
+[ext_resource type="Texture2D" uid="uid://1jjcekkwf6jd" path="res://assets/image/shop-text-box.png" id="6_f2656"]
+[ext_resource type="Texture2D" uid="uid://d3yhucl30a2cr" path="res://assets/image/item1.png" id="6_pg0lj"]
+
+[node name="Goodies" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.981333, 1, 0.44, 1)
+layout_mode = 0
+offset_left = -3.0
+offset_top = -2.0
+offset_right = 543.0
+offset_bottom = 966.0
+texture = ExtResource("1_osmr7")
+
+[node name="Items" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 545.0
+offset_bottom = 969.0
+
+[node name="Item1" type="TextureRect" parent="Items"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 162.0
+offset_right = 306.0
+offset_bottom = 445.0
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("5_opstq")
+
+[node name="ItemImage" type="TextureRect" parent="Items/Item1"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 100.0
+offset_right = 493.0
+offset_bottom = 469.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_pg0lj")
+
+[node name="Cost" type="Label" parent="Items/Item1"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 157.647
+offset_top = 220.0
+offset_right = 196.647
+offset_bottom = 243.0
+scale = Vector2(2, 2)
+text = "x1
+"
+horizontal_alignment = 2
+
+[node name="Item2" type="TextureRect" parent="Items"]
+layout_mode = 0
+offset_left = 274.0
+offset_top = 162.0
+offset_right = 552.0
+offset_bottom = 445.0
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("5_opstq")
+
+[node name="Cost" type="Label" parent="Items/Item2"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 157.647
+offset_top = 220.0
+offset_right = 196.647
+offset_bottom = 243.0
+scale = Vector2(2, 2)
+text = "x1
+"
+horizontal_alignment = 2
+
+[node name="ItemImage" type="TextureRect" parent="Items/Item2"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 100.0
+offset_right = 493.0
+offset_bottom = 469.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_pg0lj")
+
+[node name="Item3" type="TextureRect" parent="Items"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 412.0
+offset_right = 305.0
+offset_bottom = 695.0
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("5_opstq")
+
+[node name="Cost" type="Label" parent="Items/Item3"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 157.647
+offset_top = 220.0
+offset_right = 196.647
+offset_bottom = 243.0
+scale = Vector2(2, 2)
+text = "x1
+"
+horizontal_alignment = 2
+
+[node name="ItemImage" type="TextureRect" parent="Items/Item3"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 100.0
+offset_right = 493.0
+offset_bottom = 469.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_pg0lj")
+
+[node name="Item4" type="TextureRect" parent="Items"]
+layout_mode = 0
+offset_left = 274.0
+offset_top = 412.0
+offset_right = 552.0
+offset_bottom = 695.0
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("5_opstq")
+
+[node name="Cost" type="Label" parent="Items/Item4"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 157.647
+offset_top = 220.0
+offset_right = 196.647
+offset_bottom = 243.0
+scale = Vector2(2, 2)
+text = "x1
+"
+horizontal_alignment = 2
+
+[node name="ItemImage" type="TextureRect" parent="Items/Item4"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 100.0
+offset_right = 493.0
+offset_bottom = 469.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_pg0lj")
+
+[node name="TextBox" type="TextureRect" parent="Items"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 665.0
+offset_right = 601.0
+offset_bottom = 835.0
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_f2656")
+
+[node name="Button" type="Button" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 104.0
+offset_bottom = 110.0
+icon = ExtResource("2_y0if2")
+flat = true
+script = ExtResource("3_xvayf")
+
+[node name="Menu" parent="." instance=ExtResource("4_uc016")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

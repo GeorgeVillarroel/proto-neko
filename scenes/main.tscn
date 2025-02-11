@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://d1fcxx4wjlaqp"]
+
+[ext_resource type="Texture2D" uid="uid://bpqqtyuapswhd" path="res://assets/image/background.jpg" id="1_8xed5"]
+[ext_resource type="Script" path="res://scenes/dragging.gd" id="2_wv0n2"]
+[ext_resource type="Texture2D" uid="uid://b8s1e411cib1e" path="res://assets/image/menu-button.png" id="4_l8grv"]
+[ext_resource type="Script" path="res://scenes/togglemenu.gd" id="5_1ibsh"]
+[ext_resource type="PackedScene" uid="uid://8gbiwtwr0kib" path="res://scenes/menu.tscn" id="6_0gifc"]
+[ext_resource type="PackedScene" uid="uid://b1wbcx4vpinir" path="res://scenes/money.tscn" id="6_oim2k"]
+[ext_resource type="Texture2D" uid="uid://dufekocge1u2q" path="res://assets/image/harambe.png" id="7_c1hnm"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(-59, 478)
+scale = Vector2(0.846479, 0.84507)
+texture = ExtResource("1_8xed5")
+script = ExtResource("2_wv0n2")
+
+[node name="Button" type="Button" parent="."]
+z_index = 1
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 104.0
+offset_bottom = 110.0
+icon = ExtResource("4_l8grv")
+flat = true
+script = ExtResource("5_1ibsh")
+
+[node name="Money" parent="." instance=ExtResource("6_oim2k")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 40.0
+offset_top = 875.0
+offset_right = 40.0
+offset_bottom = 875.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Money"]
+position = Vector2(341, -529)
+texture = ExtResource("7_c1hnm")
+
+[node name="Menu" parent="." instance=ExtResource("6_0gifc")]
+visible = false
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
